@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+/* Self-hosted Extenda 30 Deca: drop the licensed file at public/fonts/extenda-30-deca.woff2.
+   Without it the stack falls back to Anton. */
+@font-face {
+  font-family: "Extenda 30 Deca";
+  src: url("/fonts/extenda-30-deca.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+@theme {
+  --color-ink: #0a0b0c;       /* page base, cooled so it sits under the photo */
+  --color-chalk: #f1f3f2;     /* type */
+  --color-marker: #ff6aa9;    /* the mural's pink pupil, pushed to full saturation */
+  --color-stage: #d9d6cf;     /* letterbox for the video recreation */
+  --font-display: "Extenda 30 Deca", "Anton", Impact, sans-serif;
+  --font-serif: "Instrument Serif", Georgia, serif;
+}
+
+html, body, #root { min-height: 100%; margin: 0; }
+body { background: var(--color-ink); color: var(--color-chalk); -webkit-font-smoothing: antialiased; }
+
+/* Lenis */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+
+:focus-visible { outline: 2px solid var(--color-marker); outline-offset: 4px; }
+
